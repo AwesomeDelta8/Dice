@@ -1,5 +1,6 @@
 Die Dice;
 int sum;
+double average;
 void setup() {
   size(950, 1000);
   noLoop();
@@ -16,6 +17,7 @@ void draw() {
   fill(0);
   textSize(40);
   text("Total: " + sum, 350, 900);
+  text("Average: " + average, 350, 950);
 }
 void mousePressed() {
   sum = 0;
@@ -33,6 +35,7 @@ class Die {
   void roll() {
     myRoll = (int)(Math.random() * 6+1);
     sum = sum + myRoll;
+    average = sum/72.0;
   }
   void show() {
     r = (float)(Math.random() * 67);
@@ -77,3 +80,6 @@ class Die {
     }
   }
 }
+
+
+
